@@ -1,0 +1,128 @@
+python-roman (3.3-1) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 12 to 13.
+
+  [ Gordon Ball ]
+  * Update homepage, copyright, watch URLs to github.com/zopefoundation/roman
+  * New upstream version 3.3
+  * Drop patches
+  * Add setuptools to build-depends
+  * Standards-Version: 4.6.0
+  * Simplify rules
+  * Update autopkgtest paths
+
+ -- Gordon Ball <gordon@chronitis.net>  Mon, 25 Oct 2021 18:36:58 +0000
+
+python-roman (2.0.0-5) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Add missing build dependency on dh addon.
+  * Bump debhelper from old 11 to 12.
+
+  [ Sandro Tosi ]
+  * Drop python2 support; Closes: #938147
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 17 Jul 2020 16:47:12 -0400
+
+python-roman (2.0.0-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Fix Format URL to correct one
+  * d/tests: Use AUTOPKGTEST_TMP instead of ADTTMP
+  * Convert git repository from git-dpm to gbp layout
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Scott Kitterman ]
+  * Fix autopkgtest to correctly run for all supported python3 versions when
+    there is more than one
+
+ -- Scott Kitterman <scott@kitterman.com>  Fri, 20 Mar 2020 22:54:23 -0400
+
+python-roman (2.0.0-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Fixed homepage (https).
+  * Fixed VCS URL (https).
+
+  [ Mattia Rizzolo ]
+  * d/control:
+    + Swap Maintainer with Uploaders, so that DPMT becomes maintainer.
+    + Remove now unneeded version restrictions.
+    + Remove now unneeded XS-Testsuite field.
+    + Bump Standards-Version to 4.1.3, no changes needed.
+    + Mark the binaries as Multi-Arch:foreign.  Closes: #887410
+    + Set Rules-Requires-Root:no.
+  * Bump debhelper compat level to 11.
+  * d/rules: Rewrite using the dh sequencer and the pybuild build system.
+  * d/watch: Use some subst variables to catch more possible filenames.
+  * d/copyright:
+    + Use HTTPS in the Format field.
+    + Claim some copyright over debian/*.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Mon, 22 Jan 2018 23:58:56 +0100
+
+python-roman (2.0.0-2) unstable; urgency=medium
+
+  * Team upload, with maintainer's permission.
+  * With this upload, files are no longer installed into pyshared
+    (Closes: #802328).
+
+  [ Andrea Colangelo ]
+  * debian/pathes/2to3.diff: drop, upstream supports Python 3 natively
+    (Closes: #734695).
+  * debian/patches/series: update accordingly.
+  * debian/control: Bump X-Python3-Version to >= 3.3.
+
+  [ Dmitry Shachnev ]
+  * Update debian/watch to use https://pypi.debian.net redirector.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Add explicit build-dependency on dh-python.
+
+  [ SVN-Git Migration ]
+  * Update Vcs fields for git migration.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Wed, 21 Oct 2015 22:35:18 +0300
+
+python-roman (2.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * New maintainer. (Closes: #708549)
+  * debian/patches/*: refresh.
+  * debian/control:
+    + add "XS-Testsuite: autopkgtest".
+    + bump Standards-Version to 3.9.5.
+  * debian/copyright: update to DEP-5.
+  * debian/watch: update, upstream now uses .zip files.
+  * Convert to dh_python2.
+
+ -- Andrea Colangelo <warp10@debian.org>  Sat, 28 Dec 2013 10:24:33 +0100
+
+python-roman (1.4.0-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * DEP-8 tests: use $ADTTMP.
+  * DEP-8 tests: remove “Features: no-build-needed”; it's the default now.
+  * Bump standards version to 3.9.4; no changes needed.
+  * Use canonical URIs for Vcs-* fields.
+  * Don't use dh_testdir; instead, use makefile rules to ensure that
+    debian/rules can be only run in the correct directory.
+
+ -- Jakub Wilk <jwilk@debian.org>  Mon, 13 May 2013 23:04:48 +0200
+
+python-roman (1.4.0-1) experimental; urgency=low
+
+  * Initial release (closes: #671634).
+
+ -- Jakub Wilk <jwilk@debian.org>  Sat, 05 May 2012 23:35:04 +0200

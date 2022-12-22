@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=roman
+
+%:
+	dh $@ --with python3 --buildsystem pybuild
+
+execute_after_dh_auto_install:
+	rm debian/python3-roman/usr/bin/roman

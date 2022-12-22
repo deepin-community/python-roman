@@ -1,0 +1,2 @@
+Tests: python3-roman
+Depends: python3-roman, python3-all
