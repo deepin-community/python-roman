@@ -4,8 +4,11 @@ Priority: optional
 Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Andrea Colangelo <warp10@debian.org>
 Build-Depends: debhelper-compat (= 13), dh-python | dh-sequence-python3
-Build-Depends-Indep: dh-python, python3-all, python3-setuptools
-Standards-Version: 4.6.0
+Build-Depends-Indep: dh-python,
+                     python3-all,
+                     python3-pytest <!nocheck>,
+                     python3-setuptools
+Standards-Version: 4.6.1
 Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-roman.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-roman
