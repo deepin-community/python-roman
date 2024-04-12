@@ -1,3 +1,18 @@
+python-roman (3.3-3) unstable; urgency=medium
+
+  * Team upload.
+  * Run tests with pytest instead of setup.py test.
+
+ -- Athos Ribeiro <athoscribeiro@gmail.com>  Sun, 04 Dec 2022 11:39:12 -0500
+
+python-roman (3.3-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository-Browse.
+  * Update standards version to 4.6.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Fri, 28 Oct 2022 19:58:44 +0100
+
 python-roman (3.3-1) unstable; urgency=medium
 
   [ Ondřej Nový ]
