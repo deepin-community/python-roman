@@ -3,8 +3,9 @@ Section: python
 Priority: optional
 Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Andrea Colangelo <warp10@debian.org>
-Build-Depends: debhelper-compat (= 13), dh-python | dh-sequence-python3
-Build-Depends-Indep: dh-python,
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-python3,
+Build-Depends-Indep: pybuild-plugin-pyproject,
                      python3-all,
                      python3-pytest <!nocheck>,
                      python3-setuptools
@@ -13,6 +14,7 @@ Rules-Requires-Root: no
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-roman.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-roman
 Homepage: https://github.com/zopefoundation/roman
+Testsuite: autopkgtest-pkg-pybuild
 
 Package: python3-roman
 Architecture: all
@@ -22,5 +24,3 @@ Description: module for generating/analyzing Roman numerals for Python 3
  This module converts from and to Roman numerals. It can convert numbers
  from 1 to 4999 and understands the common shortcuts (IX == 9), but not
  illegal ones (MIM == 1999).
- .
- This package includes Python 3 modules.
