@@ -1,24 +1,27 @@
-from __future__ import print_function
-
-
+##############################################################################
+#
+# Copyright (c) 2001 Mark Pilgrim and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
 """Convert to and from Roman numerals"""
 
 __author__ = "Mark Pilgrim (f8dy@diveintopython.org)"
-__version__ = "1.4"
-__date__ = "8 August 2001"
 __copyright__ = """Copyright (c) 2001 Mark Pilgrim
 
 This program is part of "Dive Into Python", a free Python tutorial for
 experienced programmers.  Visit http://diveintopython.org/ for the
 latest version.
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the Python 2.1.1 license, available at
-http://www.python.org/2.1.1/license.html
 """
 
 import argparse
-import os
 import re
 import sys
 
@@ -59,7 +62,7 @@ romanNumeralMap = (('M', 1000),
 def toRoman(n):
     """convert integer to Roman numeral"""
     if not isinstance(n, int):
-        raise NotIntegerError("decimals can not be converted")
+        raise NotIntegerError("decimals cannot be converted")
     if not (-1 < n < 5000):
         raise OutOfRangeError("number out of range (must be 0..4999)")
 
@@ -89,13 +92,29 @@ romanNumeralPattern = re.compile("""
     """, re.VERBOSE)
 
 
-def fromRoman(s):
-    """convert Roman numeral to integer"""
+def fromRoman(s: str, special_case: bool = True):
+    """
+    Convert Roman numeral to integer.
+
+    Parameters:
+        s (str): The Roman numeral string to convert.
+        special_case (bool, optional): If True (default),
+            interprets 'N' as 0 for the special case of zero.
+
+    Returns:
+        int: The integer value of the Roman numeral.
+
+    Raises:
+        InvalidRomanNumeralError: If the input is not a valid Roman numeral.
+    """
+
     if not s:
-        raise InvalidRomanNumeralError('Input can not be blank')
+        raise InvalidRomanNumeralError('Input cannot be blank')
+
+    s = s.upper()  # Handle lowercase inputs
 
     # special case
-    if s == 'N':
+    if s == 'N' and special_case:
         return 0
 
     if not romanNumeralPattern.search(s):
@@ -130,16 +149,15 @@ def parse_args():
 def main():
     args = parse_args()
     if args.reverse:
-        u = args.number.upper()
-        r = fromRoman(u)
+        r = fromRoman(args.number)
         print(r)
     else:
         i = int(args.number)
         n = toRoman(i)
         print(n)
 
-    return os.EX_OK
+    return 0
 
 
-if __name__ == "__main__":
-    sys.exit(main())
+if __name__ == "__main__":  # pragma: no cover
+    sys.exit(main())  # pragma: no cover

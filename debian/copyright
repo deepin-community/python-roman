@@ -6,14 +6,11 @@ Files: *
 Copyright: 2001 Mark Pilgrim
 License: Python-2.1.1
 
-Files: bootstrap.py
-Copyright: 2006 Zope Foundation and Contributors.
-License: ZPL-2.1
-
 Files: debian/*
 Copyright: 2012 Jakub Wilk
            2013 Andrea Colangelo
            2018 Mattia Rizzolo <mattia@debian.org>
+           2021 Gordon Ball
 License: Python-2.1.1
 
 License: ZPL-2.1
