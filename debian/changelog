@@ -1,9 +1,32 @@
-python-roman (3.3-3) unstable; urgency=medium
+python-roman (5.1-1) unstable; urgency=medium
 
   * Team upload.
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 18 Aug 2025 15:30:41 +0100
+
+python-roman (5.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Use pybuild-plugin-pyproject.
+  * Switch to autopkgtest-pkg-pybuild.
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 05 Feb 2025 11:03:11 +0000
+
+python-roman (4.2-1) unstable; urgency=medium
+
+  * Team Upload
+  * Always use dh-sequence-python3
+  * New upstream version 4.2 (Closes: #1082263)
+
+  [ Athos Ribeiro ]
   * Run tests with pytest instead of setup.py test.
 
- -- Athos Ribeiro <athoscribeiro@gmail.com>  Sun, 04 Dec 2022 11:39:12 -0500
+  [ Louis-Philippe Véronneau ]
+  * d/control: remove redundant b-d on dh-python.
+
+ -- Alexandre Detiste <tchet@debian.org>  Sun, 22 Sep 2024 14:34:03 +0200
 
 python-roman (3.3-2) unstable; urgency=medium
 

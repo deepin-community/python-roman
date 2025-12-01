@@ -4,7 +4,7 @@ export PYBUILD_NAME=roman
 export PYBUILD_TEST_ARGS=tests.py
 
 %:
-	dh $@ --with python3 --buildsystem pybuild
+	dh $@ --buildsystem pybuild
 
 execute_after_dh_auto_install:
 	rm debian/python3-roman/usr/bin/roman
